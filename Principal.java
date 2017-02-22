@@ -7,12 +7,12 @@ import java.util.Scanner;
 public class Principal {
 
 	public static void main(String[] args) throws IOException{
-		
+
 		Calculadora c = new Calculadora();
 		BufferedReader br = new BufferedReader(new FileReader("datos.txt"));
 		String linea = br.readLine();
 		double a = c.operar(linea);
 		System.out.println(a);
-		
+
 	}
 }
