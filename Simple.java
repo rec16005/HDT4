@@ -1,8 +1,3 @@
-/*
-* @author Cristopher Sebastian Recinos Ramirez
-* @author Andrea Maria Cordon Mayen
-* @date 22/02/2017
-*/
 
 public class Simple<E> extends AbstractLista<E>{
 
@@ -30,7 +25,7 @@ public class Simple<E> extends AbstractLista<E>{
     count++;
  }
 
- public E removeFirst()
+ public E getLast()
  // pre: list is not empty
  // post: removes and returns value from beginning of list
 {

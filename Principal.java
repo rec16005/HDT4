@@ -46,9 +46,14 @@ public class Principal {
 				break;
 			case 6:
 				System.out.println("Gracias por utilizar el programa");
+<<<<<<< Updated upstream
 				System.exit(0); 
+=======
+				System.exit();
+>>>>>>> Stashed changes
 				break;
-
+			default:
+				System.out.println("No existe el numero que ingreso, por favor ingrese otro: ");
 		}
 
 		double a = c.operar(linea);
