@@ -17,6 +17,7 @@ public class Principal {
 		BufferedReader br = new BufferedReader(new FileReader("datos.txt"));
 		String linea = br.readLine();
 
+                StackFactory f = new StackFactory();
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("Ingrese el numero de la implementacion que desea utilizar: ");
 		System.out.println("1. ArrayList");
@@ -27,25 +28,25 @@ public class Principal {
 		System.out.println("6. Salir");
 		int seleccion = teclado.nextInt();
 
-		switch () {
+		switch (seleccion) {
 			case 1:
-				getStack("AL");
+				f.getStack("AL");
 				break;
 			case 2:
-				getStack("V");
+				f.getStack("V");
 				break;
 			case 3:
-				getStack("LS");
+				f.getStack("LS");
 				break;
 			case 4:
-				getStack("LD");
+				f.getStack("LD");
 				break;
 			case 5:
-				getStack("LC");
+				f.getStack("LC");
 				break;
 			case 6:
-				System.out.println("Gracias por utilizar el programa").
-				System.exit(); 
+				System.out.println("Gracias por utilizar el programa");
+				System.exit(0); 
 				break;
 
 		}
