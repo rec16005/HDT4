@@ -4,6 +4,7 @@ protected int count;
 protected Doble<E> head;
 protected Doble<E> tail;
 
+
 public Doble()
 // post: constructs an empty list
 {
@@ -55,6 +56,7 @@ public E removeLast()
    }
    count--;
    return temp.value();
+   
 }
    
 
@@ -81,11 +83,14 @@ public E removeLast()
 
     @Override
     public void push(E p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // construct a new element, making it head
+   head = new Doble<E>(p, head, null);
+   // fix tail, if necessary
+   if (tail == null) tail = head;
+   count++;
     }
 
     @Override
     public E pop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-}
+    return null;
+}}

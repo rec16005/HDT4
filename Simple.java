@@ -91,20 +91,8 @@ public class Simple<E> extends AbstractLista<E> implements iPila<E>{
 
     @Override
     public void push(E p) {
-        Node<E> temp = new Node<E>(p,null);
-     if (head != null)
-    {
-        // pointer to possible tail
-        Node<E> finger = head;
-        while (finger.next() != null)
-        {
-               finger = finger.next();
-        }
-
-        finger.setNext(temp);
-     } else head = temp;
-
-   count++;
+        head = new Node<E>(p, head);
+    count++;
     }
 
     @Override
