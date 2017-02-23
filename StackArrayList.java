@@ -16,7 +16,7 @@ public class StackArrayList<E> implements iPila<E>
 	// post: the value is added to the stack
 	//          will be popped next if no intervening push
 	{
-		data.add(item);
+		data.add(p);
 	}
 
         @Override
@@ -24,7 +24,7 @@ public class StackArrayList<E> implements iPila<E>
 	// pre: stack is not empty
 	// post: most recently pushed item is removed and returned
 	{
-		return data.remove(size()-1);
+		return data.remove(data.size()-1);
 	}
 
     @Override
