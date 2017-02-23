@@ -1,8 +1,8 @@
 
 public class Doble<E> extends AbstractLista<E> implements iPila<E>{
 protected int count;
-protected Doble<E> head;
-protected Doble<E> tail;
+protected DoublyLinkedNode<E> head;
+protected DoublyLinkedNode<E> tail;
 
 
 public Doble()
@@ -23,7 +23,7 @@ public void addFirst(E value)
 // post: adds element to head of list
 {
    // construct a new element, making it head
-   head = new Doble<E>(value, head, null);
+   head = new DoublyLinkedNode<E>(value, head, null);
    // fix tail, if necessary
    if (tail == null) tail = head;
    count++;
@@ -35,7 +35,7 @@ public void addLast(E value)
 // post: adds new value to tail of list
 {
    // construct new element
-   tail = new Doble<E>(value, null, tail);
+   tail = new DoublyLinkedNode<E>(value, null, tail);
    // fix up head
    if (head == null) head = tail;
    count++;
@@ -47,15 +47,16 @@ public E removeLast()
 // post: removes value from tail of list
 
 {
-   Doble<E> temp = tail;
-   tail = tail.previous();
+   DoublyLinkedNode<E> temp = tail;
+   /*tail = tail.previous();
    if (tail == null) {
        head = null;
    } else {
        tail.setNext(null);
    }
    count--;
-   return temp.value();
+   return temp.value();*/
+   return null;
    
 }
    
@@ -63,7 +64,7 @@ public E removeLast()
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return count;
     }
 
     @Override
@@ -84,13 +85,24 @@ public E removeLast()
     @Override
     public void push(E p) {
         // construct a new element, making it head
-   head = new Doble<E>(p, head, null);
-   // fix tail, if necessary
-   if (tail == null) tail = head;
+   tail = new DoublyLinkedNode<E>(p, null, tail);
+   // fix up head
+   if (head == null) head = tail;
    count++;
     }
 
     @Override
     public E pop() {
-    return null;
+    DoublyLinkedNode<E> temp = tail;
+    if(!isEmpty()){
+        if(head.nextElement==null){
+        head = null;
+        tail = null;
+    }
+    else{
+        tail = tail.previousElement;
+        tail.nextElement = null;
+    }}
+    
+    return (E)temp.value();
 }}

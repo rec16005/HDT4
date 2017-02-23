@@ -45,7 +45,9 @@ public class Principal {
                                 System.out.println(a);
 				break;
 			case 4:
-				f.getStack("LD");
+				v = f.getStack("LD");
+                                a = c.operar(linea, v);
+                                System.out.println(a);
 				break;
 			case 5:
 				v = f.getStack("LC");

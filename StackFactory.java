@@ -13,10 +13,10 @@ class StackFactory<E> {
         else if (entry.equals("LS"))
             return new Simple<E>();
         else if (entry.equals("LD"))
-            return new vector<E>();
+            return new Doble<E>();
         else if (entry.equals("LC"))
             return new Circular<E>();
         else
-            return new vector<E>();
+            return null;
    }
 }
