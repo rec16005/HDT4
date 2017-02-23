@@ -7,8 +7,16 @@ class StackFactory<E> {
    public iPila<E> getStack(String entry) {
     // seleccion de la implementacion a utilizar:
 	if (entry.equals("AL"))
-      return new StackArrayList<E>(); //regresa ArrayList
-	else
-      return new vector<E>(); //regresa Vector
+            return new StackArrayList<E>(); //regresa ArrayList
+        else if (entry.equals("V"))
+            return new vector<E>(); //regresa Vector
+        else if (entry.equals("LS"))
+            return new Simple<E>();
+        else if (entry.equals("LD"))
+            return new vector<E>();
+        else if (entry.equals("LC"))
+            return new Circular<E>();
+        else
+            return new vector<E>();
    }
 }

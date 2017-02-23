@@ -1,7 +1,7 @@
 
 public interface iCalculadora {
 	
-	public double operar (String n);
+	public double operar (String n, iPila v);
 	
 	public double suma(double a, double b);
 	

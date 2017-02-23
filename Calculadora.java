@@ -28,8 +28,8 @@ public class Calculadora implements iCalculadora{
 	}	
 
 	@Override
-	public double operar(String n) {
-		vector v = new vector ();
+	public double operar(String n, iPila v) {
+		
 		Scanner leer = new Scanner(n);
 		
 		while (leer.hasNext()) {

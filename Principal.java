@@ -30,34 +30,39 @@ public class Principal {
 
 		switch (seleccion) {
 			case 1:
-				f.getStack("AL");
+				iPila v = f.getStack("AL");
+                                double a = c.operar(linea, v);
+                                System.out.println(a);
 				break;
 			case 2:
-				f.getStack("V");
+				v = f.getStack("V");
+                                a = c.operar(linea, v);
+                                System.out.println(a);
 				break;
 			case 3:
-				f.getStack("LS");
+				v = f.getStack("LS");
+                                a = c.operar(linea, v);
+                                System.out.println(a);
 				break;
 			case 4:
 				f.getStack("LD");
 				break;
 			case 5:
-				f.getStack("LC");
+				v = f.getStack("LC");
+                                a = c.operar(linea, v);
+                                System.out.println(a);
 				break;
 			case 6:
 				System.out.println("Gracias por utilizar el programa");
-<<<<<<< Updated upstream
+
 				System.exit(0); 
-=======
-				System.exit();
->>>>>>> Stashed changes
+
 				break;
 			default:
 				System.out.println("No existe el numero que ingreso, por favor ingrese otro: ");
 		}
 
-		double a = c.operar(linea);
-		System.out.println(a);
+		
 
 	}
 }

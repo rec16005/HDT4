@@ -1,9 +1,10 @@
 
-public class Simple<E> extends AbstractLista<E>{
+public class Simple<E> extends AbstractLista<E> implements iPila<E>{
 
   protected Node<E> head; // ref. to first element
+  int count = 0;
 
-  public SinglyLinkedList()
+  public Simple()
   // post: generates an empty list
   {
      head = null;
@@ -77,5 +78,41 @@ public class Simple<E> extends AbstractLista<E>{
      }
      return finger != null;
   }
+
+    @Override
+    public void addFirst() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addLast() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void push(E p) {
+        Node<E> temp = new Node<E>(p,null);
+     if (head != null)
+    {
+        // pointer to possible tail
+        Node<E> finger = head;
+        while (finger.next() != null)
+        {
+               finger = finger.next();
+        }
+
+        finger.setNext(temp);
+     } else head = temp;
+
+   count++;
+    }
+
+    @Override
+    public E pop() {
+        Node<E> temp = head;
+    head = head.next(); // move head down list
+    count--;
+    return temp.value();
+    }
 
 }

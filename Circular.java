@@ -1,9 +1,9 @@
-public CircularList<E> extends abstractList<E>
+public class Circular<E> extends AbstractLista<E> implements iPila<E>{
 
 protected Node<E> tail;
 protected int count;
 
-public CircularList()
+public Circular()
 // pre: constructs a new circular list
 {
    tail = null;
@@ -57,4 +57,51 @@ public E removeLast()
    }
    count--;
    return temp.value();
+}
+
+    @Override
+    public int size() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addFirst() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addLast() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public E getLast() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void push(E p) {
+        // new entry:
+   addFirst(p);
+   tail = tail.next();
+    }
+
+    @Override
+    public E pop() {
+        Node<E> finger = tail;
+   while (finger.next() != tail) {
+       finger = finger.next();
+   }
+   // finger now points to second-to-last value
+   Node<E> temp = tail;
+   if (finger == tail)
+   {
+       tail = null;
+   } else {
+       finger.setNext(tail.next());
+       tail = finger;
+   }
+   count--;
+   return temp.value();
+    }
 }
