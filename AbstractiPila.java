@@ -1,4 +1,4 @@
-public abstract AbstractiPila<E>{
+public abstract class AbstractiPila<E>{
   public void push(E p){
     v.add(p);
   }

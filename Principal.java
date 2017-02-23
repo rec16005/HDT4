@@ -1,3 +1,8 @@
+/*
+* @author Cristopher Sebastian Recinos Ramirez
+* @author Andrea Maria Cordon Mayen
+* @date 22/02/2017
+*/
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

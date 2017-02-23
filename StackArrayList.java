@@ -11,14 +11,21 @@ public class StackArrayList<E> implements iPila<E>
 		data = new ArrayList<E>();
 	}
 
-  @Override
-  public void push(E p);
+        @Override
+	public void push(E p)
+	// post: the value is added to the stack
+	//          will be popped next if no intervening push
+	{
+		data.add(item);
+	}
 
-  @Override
-  public E pop();
-
-  @Override
-  public boolean isEmpty();
+        @Override
+	public E pop()
+	// pre: stack is not empty
+	// post: most recently pushed item is removed and returned
+	{
+		return data.remove(size()-1);
+	}
 
     @Override
     public boolean isEmpty() {
