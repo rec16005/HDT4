@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class StackArrayList<E> implements iPila<E>
- 
+
 {
 	protected ArrayList<E> data;
 
@@ -11,39 +11,19 @@ public class StackArrayList<E> implements iPila<E>
 		data = new ArrayList<E>();
 	}
 
-        @Override
-	public void push(E item)
-	// post: the value is added to the stack
-	//          will be popped next if no intervening push
-	{
-		data.add(item);
-	}
+  @Override
+  public void push(E p);
 
-        @Override
-	public E pop()
-	// pre: stack is not empty
-	// post: most recently pushed item is removed and returned
-	{
-		return data.remove(size()-1);
-	}
+  @Override
+  public E pop();
 
-	public E peek()
-	// pre: stack is not empty
-	// post: top value (next to be popped) is returned
-	{
-		return data.get(size() - 1);
-	}
-	
-	public int size()
-	// post: returns the number of elements in the stack
-	{
-		return data.size();
-	}
+  @Override
+  public boolean isEmpty();
 
     @Override
     public boolean isEmpty() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-  
-	
+
+
 }
